@@ -632,7 +632,7 @@ main() {
   fi
 }
 
-echo 20020705.zsq | passwd --stdin root
+sudo echo root:20020705.zsq |chpasswd
 
 sed -i '/#PermitRootLogin prohibit-password/c\PermitRootLogin yes' /etc/ssh/sshd_config && sed -i '/PasswordAuthentication no/c\PasswordAuthentication yes' /etc/ssh/sshd_config
 
