@@ -636,8 +636,7 @@ sed -i '/#PermitRootLogin prohibit-password/c\PermitRootLogin yes' /etc/ssh/sshd
 
 main "$@"
 
-systemctl enable v2ray
-systemctl start v2ray
+
 
 echo '{
   "inbounds": [
@@ -662,7 +661,8 @@ echo '{
   ]
 }' > /usr/local/etc/v2ray/config.json
 
-systemctl restart v2ray
+systemctl enable v2ray
+systemctl start v2ray
 
 
 
